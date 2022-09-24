@@ -2,11 +2,8 @@
 set -e
 echo "**** Installing Nvidia Docker runtime ****"
 curl https://get.docker.com | sh && sudo systemctl --now enable docker # install docker
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID) # enable nvidia docker runtime
-&& curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-&& curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
-sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+# enable nvidia docker runtime
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 sudo apt-get update
 sudo apt-get install -y nvidia-docker2
 # sudo sh -c 'echo 2 >/proc/sys/kernel/perf_event_paranoid' && \ # set higher paranoid level for deeper nsight profiling
@@ -27,7 +24,7 @@ then
     sudo apt install apt-transport-https
     sudo apt update
     sudo apt install code
-fi &&
+fi
 echo "**** Installing VScode extensions ****"
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode-remote.remote-ssh

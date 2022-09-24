@@ -12,7 +12,7 @@ then
       sudo apt install apt-transport-https
       sudo apt update
       sudo apt install code
-fi && \
+fi
 echo "**** Installing VScode extensions ****"
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode.cpptools
