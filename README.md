@@ -35,6 +35,11 @@ services:
 
 ```
 
+Or you can run the equivalent with
+```
+docker run -p 22:22 -p 8443:8443 --gpus all solomspd/cuda-starter
+```
+
 To start debugging and building, take a look at the workspace directory that has every you need to get started including a simple build environment and hello world program.
 
 ## Build
