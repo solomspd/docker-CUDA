@@ -29,3 +29,15 @@ services:
 ```
 
 To start debugging and building, take a look at the workspace directory that has every you need to get started including a simple build environment and hello world program.
+
+## Build
+
+To build the docker image, you need to clone the repo:
+```
+git clone --recusive https://github.com/solomspd/docker-CUDA
+```
+
+Then build the docker image:
+```
+docker build -t solomspsd/cuda-starter .
+```
