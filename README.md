@@ -10,6 +10,8 @@ Fasted way to get it up and running is if you run this in a new directory
 wget https://raw.githubusercontent.com/solomspd/docker-CUDA/master/docker-compose.yml && docker-compose up -d
 ```
 
+This will downloading the following docker compose file and run it
+
 ```yaml
 ---
 version: "2.1"
