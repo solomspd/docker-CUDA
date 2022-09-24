@@ -8,7 +8,7 @@ sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-
 sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list && \
 sudo apt-get update && \
 sudo apt-get install -y nvidia-docker2 && \
-sudo sh -c 'echo 2 >/proc/sys/kernel/perf_event_paranoid' && \ # set higher paranoid level for deeper nsight profiling
+# sudo sh -c 'echo 2 >/proc/sys/kernel/perf_event_paranoid' && \ # set higher paranoid level for deeper nsight profiling
 # for ID in $(cat /etc/passwd | grep /home | cut -d ':' -f1); do (adduser $ID docker); done && # add all users to docker group
 adduser $USER docker && \
 sudo systemctl restart docker &&
