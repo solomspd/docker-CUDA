@@ -2,7 +2,7 @@
 version: "2.1"
 services:
   cuda-starter:
-    image: solomspd/cuda-starter
+    image: solomspd/cuda-starter:latest
     environment:
       - TZ=Africa/Cairo
       - DEFAULT_WORKSPACE=/home/workspace
