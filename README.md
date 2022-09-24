@@ -5,6 +5,11 @@ A docker image to quick start your CUDA development
 ## Docker-compose
 To set up this docker image on your machine you can use the following docker-compose.
 
+Fasted way to get it up and running is if you run this in a new directory
+```
+wget https://raw.githubusercontent.com/solomspd/docker-CUDA/master/docker-compose.yml && docker-compose up -d
+```
+
 ```yaml
 ---
 version: "2.1"
