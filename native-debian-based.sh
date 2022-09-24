@@ -1,6 +1,7 @@
 #!/bin/bash
-echo "**** Setting up VScode on host machine ****" && \
-sudo sh -c 'echo 2 >/proc/sys/kernel/perf_event_paranoid' && \ # set higher paranoid level for deeper nsight profiling
+set -e
+echo "**** Setting up VScode on host machine ****"
+sudo sh -c 'echo 2 >/proc/sys/kernel/perf_event_paranoid' # set higher paranoid level for deeper nsight profiling
 if ! command -v code &> /dev/null # if vscode is not installed, install it
 then
       sudo apt-get install wget gpg
@@ -12,15 +13,15 @@ then
       sudo apt update
       sudo apt install code
 fi && \
-echo "**** Installing VScode extensions ****" && \
-code --install-extension ms-vscode-remote.remote-containers && \
-code --install-extension ms-vscode.cpptools && \
-code --install-extension VisualStudioExptTeam.vscodeintellicode && \
-code --install-extension ms-azuretools.vscode-docker && \
-code --install-extension ms-vscode-remote.remote-containers && \
-code --install-extension redhat.vscode-yaml && \
-code --install-extension NVIDIA.nsight-vscode-edition && \
-echo "Copying starter workspace" && \
-cp -r workspace ~/GPU-computing-workspace && \
-echo "GPU environment is ready!" && \
+echo "**** Installing VScode extensions ****"
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-vscode.cpptools
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension redhat.vscode-yaml
+code --install-extension NVIDIA.nsight-vscode-edition
+echo "Copying starter workspace"
+cp -r workspace ~/GPU-computing-workspace
+echo "GPU environment is ready!"
 echo "Installation complete"
