@@ -41,7 +41,7 @@ To start debugging and building, take a look at the workspace directory that has
 
 To build the docker image, you need to clone the repo:
 ```
-git clone --recusive https://github.com/solomspd/docker-CUDA
+git clone --recusive https://github.com/solomspd/docker-CUDA && docker-CUDA
 ```
 
 Then build the docker image:
