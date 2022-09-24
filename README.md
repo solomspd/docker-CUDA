@@ -10,6 +10,11 @@ Fasted way to get it up and running is if you run this in a new directory
 wget https://raw.githubusercontent.com/solomspd/docker-CUDA/master/docker-compose.yml && docker-compose up -d
 ```
 
+You can also use this script to install docker for you and set up the environment:
+```
+wget https://raw.githubusercontent.com/solomspd/docker-CUDA/master/docker-based-setup.sh | sh
+```
+
 This will download the following docker compose file and run it
 
 ```yaml
